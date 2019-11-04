@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      #people {
+        width: 7%;
+        height: 35%;
+        border: 1px solid;
+        position: absolute;
+        left: 9%;
+        bottom: 12%;
+        border-radius: 50%;
+        line-height: 235px;
+        text-align: center;
+      }
+      .sense_one,
+      .sense_two {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid red;
+        padding-top: 5%;
+        text-align: center;
+        transition: left 1s ease;
+      }
+      .sense_one p,
+      .sense_two p {
+        font-size: 3rem;
+      }
+      .sense_two {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sense_one">
+      <p>场景一</p>
+    </div>
+    <div class="sense_two">
+      <p>场景二</p>
+    </div>
+    <div class="sense_thee">
+      <p>场景三</p>
+    </div>
+    <div class="sense_four">
+      <p>场景四</p>
+    </div>
+    <div id="people">人</div>
+  </body>
+  <script type="text/javascript">
+    //keyCode 值 左上右下 37--40
+    window.onload = function() {
+      let people = document.querySelector("#people");
+      let sense_one = document.querySelector(".sense_one"); // 场景一
+      let sense_two = document.querySelector(".sense_two"); // 场景二
+      let sense_three = document.querySelector(".sense_two"); // 场景三
+      let sense_four = document.querySelector(".sense_four"); // 场景四
+      let is_sense_two = false; // 是否解锁场景二
+      let isMove = {
+        left: "false",
+        top: "false",
+        right: "false",
+        bottom: "false"
+      };
+      // alert(people.offsetWidth);
+      document.onkeydown = function(ev) {
+        var ev = ev || event;
+        if (ev.keyCode == 37) {
+          isMove["left"] = true;
+        }
+        if (ev.keyCode == 38) {
+          isMove["top"] = true;
+        }
+        if (ev.keyCode == 39) {
+          isMove["right"] = true;
+        }
+        if (ev.keyCode == 40) {
+          isMove["bottom"] = true;
+        }
+      };
+      document.onkeyup = function() {
+        var ev = ev || event;
+        if (ev.keyCode == 37) {
+          isMove["left"] = false;
+        }
+        if (ev.keyCode == 38) {
+          isMove["top"] = false;
+        }
+        if (ev.keyCode == 39) {
+          isMove["right"] = false;
+        }
+        if (ev.keyCode == 40) {
+          isMove["bottom"] = false;
+        }
+      };
+      setInterval(function() {
+        if (isMove["left"] == true) {
+          let left = people.getBoundingClientRect().left; // 元素距离左边的距离
+          if (left <= 0) {
+            people.style.left = people.offsetWidth + "px";
+          } else {
+            people.style.left = people.offsetLeft - 10 + "px";
+          }
+        }
+        // if (isMove["top"] == true) {
+        //     let top = people.getBoundingClientRect().top;
+        //   people.style.top = people.offsetTop - 10 + "px";
+        // }
+        if (isMove["right"] == true) {
+          let right = people.getBoundingClientRect().right; // 元素距离右边的距离
+
+          // let activityDistance = window.innerWidth - people.offsetWidth; // 可移动距离
+          // 判断是否达到最右端
+          if (right >= window.innerWidth) {
+            people.style.left = people.offsetWidth + "px";
+            is_sense_two = true; // 开启场景二
+            if (is_sense_two == true) {
+              sense_one.style.left = "-5000px";
+              sense_one.style.zIndex = 1;
+              sense_two.style.display = "block";
+            }
+          } else {
+            people.style.left = people.offsetLeft + 10 + "px";
+          }
+        }
+        // if (isMove["bottom"] == true) {
+        //   people.style.top = people.offsetTop + 10 + "px";
+        // }
+      }, 30);
+    };
+  </script>
+</html>

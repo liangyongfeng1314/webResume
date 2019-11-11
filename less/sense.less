@@ -1,0 +1,946 @@
+   * {
+       padding: 0;
+       margin: 0;
+       box-sizing: border-box;
+   }
+
+   html,
+   body {
+       width: 100%;
+       height: 100%;
+       overflow: hidden;
+   }
+
+   #people {
+       position: absolute;
+       left: 9%;
+       bottom: 2%;
+       width: 7%;
+       height: 10%;
+       line-height: 60px;
+       text-align: center;
+       border: 1px solid rgb(32, 223, 32);
+
+       p {
+           font-size: 1rem;
+       }
+   }
+
+   .sense_one,
+   .sense_two,
+   .sense_three,
+   .sense_four {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       transition: left 1s ease;
+   }
+
+   // ------------------------场景一样式-----------------------------------------------
+   .sense_one {
+       .title {
+           width: 100%;
+           text-align: center;
+
+           .line {
+               margin: 0 auto;
+               display: block;
+               width: 1px;
+               height: 50px;
+               border: 1px solid currentColor;
+               transition: all 2s linear;
+           }
+
+           .content {
+               margin: 0 auto;
+               width: 30%;
+               height: 60px;
+               line-height: 55px;
+               text-align: center;
+               color: #fff;
+               font-size: 2rem;
+               font-weight: bold;
+               letter-spacing: 1rem;
+               text-shadow: 5px 5px 5px rgb(22, 119, 230);
+               background: url('../images/sense_one/title_bg.jpg');
+               background-size: 100% 100%;
+               border-radius: 2%;
+               transition: all 1s linear;
+           }
+       }
+
+       ul {
+           width: 100%;
+           height: 300px;
+
+           li {
+               width: 100%;
+               height: 100px;
+               line-height: 100px;
+               display: -webkit-flex;
+               display: flex;
+               justify-content: center;
+               position: relative;
+               font-size: 1.2rem;
+               text-align: center;
+               margin: 2% 0;
+
+               &:last-child {
+                   background: url('../images/sense_one/li_bg.jpg');
+                   color: #fff;
+                   text-shadow: 5px 5px 5px rgb(199, 32, 32);
+                   transition: all 1s linear;
+               }
+
+               p {
+                   width: 20%;
+                   color: #fff;
+                   text-shadow: 5px 5px 5px rgb(199, 32, 32);
+                   background: url('../images/sense_one/li_bg.jpg');
+                   background-size: 100% 100%;
+                   border-radius: 10%;
+
+                   &:nth-of-type(1) {
+                       position: absolute;
+                       left: 20%;
+
+                   }
+
+                   &:nth-of-type(2) {
+                       position: absolute;
+                       right: 20%;
+
+                   }
+               }
+           }
+       }
+   }
+
+
+   // 线的动画
+   .lineAnimation {
+       -webkit-animation: lineIn 1s linear both;
+       animation: lineIn 1s linear both;
+   }
+
+   // 图标的动画
+   .content {
+       -webkit-animation: titleShake 5s infinite linear;
+       animation: titleShake 5s infinite linear;
+   }
+
+   // 几个标签的动画（左边从左边出来，右边从右边出来）
+   .leftIn {
+       -webkit-animation: leftIn 1s linear both;
+       animation: leftIn 1s linear both;
+   }
+
+   .rightIn {
+       -webkit-animation: rightIn 1s linear both;
+       animation: rightIn 1s linear both;
+   }
+
+
+   // -----------------------------------------------------------------------
+   // --------------------------------------------场景二的样式--------------------------------------------------
+   .sense_two {
+       .two_title {
+           width: 100%;
+           text-align: center;
+
+           .two_line {
+               margin: 0 auto;
+               display: block;
+               width: 1px;
+               height: 50px;
+               border: 1px solid currentColor;
+               transition: all 2s linear;
+           }
+
+           .two_content {
+               margin: 0 auto;
+               width: 30%;
+               height: 60px;
+               line-height: 55px;
+               text-align: center;
+               color: #fff;
+               font-size: 2rem;
+               font-weight: bold;
+               letter-spacing: 1rem;
+               text-shadow: 5px 5px 5px rgb(22, 119, 230);
+               background: url('../images/sense_one/title_bg.jpg');
+               background-size: 100% 100%;
+               border-radius: 2%;
+               transition: all 1s linear;
+           }
+       }
+   }
+
+   .medals {
+       position: relative;
+       width: 100%;
+       margin-top: 3%;
+
+       .m_o,
+       .m_t,
+       .m_thr {
+           width: 30%;
+           height: 147px;
+
+           .left_line {
+               width: 30%;
+               height: 100%;
+               float: left;
+
+
+               span {
+                   margin-top: 58%;
+                   display: block;
+                   width: 100%;
+                   height: 5px;
+                   background: #C2DB42;
+                   -webkit-transition: all 1s linear;
+                   transition: all 1s linear;
+                   opacity: 0;
+
+               }
+           }
+
+
+
+           .right_content {
+               // 左边内容
+               position: relative;
+               left: 30%;
+               width: 70%;
+               height: 100%;
+               border: 1px dashed rgb(66, 223, 61);
+               opacity: 0;
+               transition: all 1s linear;
+
+               .tri_left {
+                   position: absolute;
+                   z-index: 1;
+                   left: 0;
+                   bottom: 0;
+                   width: 0;
+                   height: 0;
+                   border-color: rgb(66, 223, 61) transparent;
+                   border-width: 0 50px 50px 0;
+                   border-style: solid;
+               }
+
+               .tri_right {
+                   position: absolute;
+                   right: 0;
+                   z-index: 1;
+                   width: 0;
+                   height: 0;
+                   border-color: transparent rgb(66, 223, 61);
+                   border-width: 0 50px 50px 0;
+                   border-style: solid;
+               }
+
+               p {
+                   &:nth-of-type(1) {
+                       position: absolute;
+                       left: 0;
+                       top: 0;
+                       right: 0;
+                       height: 30%;
+                       line-height: 43px;
+                       text-align: center;
+                       background: rgb(123, 255, 0);
+                       color: #fff;
+                       text-shadow: 5px 5px 5px rgb(44, 216, 246);
+                       font-weight: bold;
+                       font-size: 1.2rem;
+                   }
+
+                   &:nth-of-type(2) {
+                       position: absolute;
+                       width: 100%;
+                       top: 30%;
+                       height: 70%;
+                       text-align: center;
+                       line-height: 90px;
+                       font-size: 1.2rem;
+                       color: rgb(123, 255, 0);
+
+                       .star {
+                           width: 2%;
+                           height: 8%;
+                           background: rgb(123, 255, 0);
+                           border-radius: 50%;
+                           -webkit-transition: all 1s linear;
+                           transition: all 1s linear;
+
+                       }
+
+
+
+                       span {
+                           &:nth-of-type(1) {
+                               position: absolute;
+                               top: 7%; // 标记
+                               left: 2%;
+                           }
+
+                           &:nth-of-type(2) {
+                               position: absolute;
+                               top: 50%; // 标记
+                               right: 2%;
+                           }
+
+                           &:nth-of-type(3) {
+                               position: absolute;
+                               top: 75%; // 标记
+                               left: 2%;
+                           }
+                       }
+                   }
+               }
+
+
+           }
+       }
+
+       .m_o {
+           position: absolute;
+           left: 0;
+       }
+
+       .m_t {
+           position: absolute;
+           right: 0;
+
+           .left_contrary_line {
+               // 相反的线
+               width: 30%;
+               height: 100%;
+               float: right;
+               position: relative;
+
+               span {
+                   position: absolute;
+                   right: -100%;
+                   margin-top: 58%;
+                   display: block;
+                   width: 100%;
+                   height: 5px;
+                   background: #C2DB42;
+                   -webkit-transition: all 1s linear;
+                   transition: all 1s linear;
+               }
+
+           }
+
+
+
+           .right_contrary_content {
+               position: relative;
+               width: 70%;
+               height: 100%;
+               border: 1px dashed rgb(66, 223, 61);
+               text-align: center;
+               line-height: 90px;
+               font-size: 1.2rem;
+               color: rgb(123, 255, 0);
+               opacity: 0;
+               transition: all 1s linear;
+
+               .tri_left {
+                   position: absolute;
+                   left: 0;
+                   bottom: 0;
+                   z-index: 1;
+                   width: 0;
+                   height: 0;
+                   border-color: rgb(66, 223, 61) transparent;
+                   border-width: 0 50px 50px 0;
+                   border-style: solid;
+               }
+
+               .tri_right {
+                   position: absolute;
+                   right: 0;
+                   z-index: 1;
+                   width: 0;
+                   height: 0;
+                   border-color: transparent rgb(66, 223, 61);
+                   border-width: 0 50px 50px 0;
+                   border-style: solid;
+               }
+
+               p {
+                   &:nth-of-type(1) {
+                       position: absolute;
+                       left: 0;
+                       top: 0;
+                       right: 0;
+                       height: 30%;
+                       line-height: 43px;
+                       text-align: center;
+                       background: rgb(123, 255, 0);
+                       color: #fff;
+                       text-shadow: 5px 5px 5px rgb(66, 223, 61);
+                       font-weight: bold;
+                   }
+
+                   &:nth-of-type(2) {
+                       position: absolute;
+                       top: 30%;
+                       width: 100%;
+                       height: 70%;
+
+                       .star {
+                           width: 2%;
+                           height: 8%;
+                           background: rgb(123, 255, 0);
+                           border-radius: 50%;
+                           -webkit-transition: all 1s linear;
+                           transition: all 1s linear;
+                       }
+
+                       span {
+                           &:nth-of-type(1) {
+                               position: absolute;
+                               top: 7%; // 标记
+                               left: 2%;
+                           }
+
+                           &:nth-of-type(2) {
+                               position: absolute;
+                               top: 50%; // 标记
+                               right: 2%;
+                           }
+
+                           &:nth-of-type(3) {
+                               position: absolute;
+                               top: 75%; // 标记
+                               left: 2%;
+                           }
+                       }
+                   }
+               }
+           }
+       }
+
+       .m_thr {
+           position: absolute;
+           left: 0;
+           top: 168px;
+       }
+   }
+
+   // --------------------------------------------场景三的样式--------------------------------------------------
+   .sense_three {
+       .flags {
+           width: inherit;
+           display: -webkit-flex;
+           display: flex;
+           justify-content: space-around;
+
+           .flag_line {
+               width: inherit;
+               height: 30px;
+               border-right: 3px solid red;
+
+           }
+
+           .flag {
+               width: 100px;
+               height: inherit;
+
+               &:nth-of-type(2) {
+                   .flag_line {
+                       height: 50px;
+                   }
+               }
+
+               &:nth-of-type(3) {
+                   .flag_line {
+                       height: 80px;
+                   }
+               }
+
+               .flag_content {
+                   position: relative;
+                   width: inherit;
+                   height: 70px;
+
+                   .tri {
+                       position: absolute;
+                       top: -5px;
+                       right: 0;
+                       border-color: rgb(236, 42, 42) transparent;
+                       border-color: rgb(236, 42, 42) transparent;
+                       border-width: 66px 0 0 97px;
+                       border-style: solid;
+                       -webkit-transform-origin: right;
+                       transform-origin: right;
+                       transform: rotateX(180deg) rotateY(0deg);
+                       transition: all 1s linear;
+                       .falgMove;
+                   }
+               }
+           }
+       }
+
+       .languages_area {
+           width: 100%;
+           display: -webkit-flex;
+           display: flex;
+
+           .left_line {
+
+               width: 30%;
+               height: 350px;
+               display: -webkit-flex;
+               display: flex;
+               align-items: center;
+               opacity: 0;
+               transition: all 1s linear;
+
+               span {
+                   display: block;
+                   width: 100%;
+                   height: 3px;
+                   background: #C2DB42;
+               }
+           }
+
+           .languages {
+               width: 70%;
+               height: 350px;
+               border: 1px solid rgb(0, 255, 200);
+               opacity: 0;
+
+               ul {
+                   width: 100%;
+                   height: inherit;
+                   display: -webkit-flex;
+                   display: flex;
+                   flex-direction: column;
+
+                   li {
+                       padding: 1% 20%;
+                       width: inherit;
+                       flex: 1;
+                       letter-spacing: .2rem;
+                       list-style-type: none;
+
+                       p {
+                           padding-left: 10%;
+                           opacity: 0;
+                       }
+
+                       span {
+                           display: block;
+                           padding-top: 1%;
+                           width: 100%;
+                           height: 2px;
+                           border-bottom: 1px dashed rgb(123, 255, 0);
+                           opacity: 0;
+                       }
+
+                       &:nth-of-type(1) {
+                           text-align: center;
+
+                           p {
+                               padding-left: 0;
+                           }
+                       }
+                   }
+               }
+           }
+
+           .right_line {
+               position: relative;
+               right: -30%;
+               width: 30%;
+               height: 350px;
+               display: -webkit-flex;
+               display: flex;
+               opacity: 0;
+               align-items: center;
+
+               span {
+                   display: block;
+                   width: 100%;
+                   height: 3px;
+                   background: #C2DB42;
+               }
+           }
+       }
+   }
+
+   // --------------------------------------------场景四的样式--------------------------------------------------
+   .sense_four {
+       .four_content {
+           position: relative;
+           width: 30%;
+           height: 30%;
+           border: 1px solid green;
+           margin: 16% auto 0 auto;
+           padding: 2% 0 0 2%;
+
+           p {
+               margin-top: 1%;
+
+               &:nth-of-type(2) {
+                   margin-left: 1.5%;
+               }
+
+               &:nth-of-type(3) {
+                   margin-left: 1.5%;
+               }
+           }
+
+           a {
+               position: absolute;
+               bottom: 0;
+               right: 0;
+               text-align: center;
+               width: 100px;
+               height: 50px;
+               line-height: 50px;
+               text-decoration: none;
+               color: #fff;
+               animation: changeColor 2s ease  infinite alternate-reverse;
+               animation-play-state: running;
+               &:hover{
+                   animation-play-state:paused ;
+               }
+           }
+       }
+   }
+
+   .displayNone {
+       display: none;
+   }
+
+   .displayBlock {
+       display: block;
+   }
+
+   .opacity0 {
+       opacity: 0;
+   }
+
+   .opacity1 {
+       opacity: 1;
+   }
+
+   .animationLeft {
+       animation: moveLeft 1s forwards;
+   }
+
+   .animationRight {
+       animation: moveRight 1s forwards;
+   }
+
+   @keyframes moveLeft {
+
+       // 场景从左到右动画
+       0% {
+           left: 0;
+       }
+
+       100% {
+           left: -5000px;
+       }
+   }
+
+   @keyframes moveRight {
+
+       // 场景从右到左动画
+       0% {
+           left: -5000px;
+       }
+
+       100% {
+           left: 0;
+       }
+   }
+
+   // 线出来
+   @keyframes lineIn {
+       0% {
+           height: 0;
+       }
+
+       100% {
+           height: 50px;
+       }
+   }
+
+   // title元素摇晃
+   @keyframes titleShake {
+       0% {
+           -webkit-transform: rotateZ(0);
+           transform: rotateZ(0);
+       }
+
+       25% {
+           -webkit-transform: rotateZ(-5deg);
+           transform: rotateZ(-5deg);
+       }
+
+       50% {
+           -webkit-transform: rotateZ(0);
+           transform: rotateZ(0);
+       }
+
+       75% {
+           -webkit-transform: rotateZ(5deg);
+           transform: rotateZ(5deg);
+       }
+
+       100% {
+           -webkit-transform: rotateZ(0);
+           transform: rotateZ(0);
+
+       }
+   }
+
+   // leftIn动画
+   @keyframes leftIn {
+       0% {
+           left: -500px;
+       }
+
+       100% {
+           left: 300px;
+       }
+   }
+
+   // rightIn动画
+   @keyframes rightIn {
+       0% {
+           right: -500px;
+       }
+
+       100% {
+           right: 20%;
+       }
+   }
+
+   // --------------------------------------场景二的动画----------------------------------------------------
+   // 线从左边出来
+   @keyframes lineFormLeft {
+       0% {
+           width: 0;
+           opacity: 1;
+       }
+
+       100% {
+           width: 100%;
+           opacity: 1;
+       }
+   }
+
+   // 线从右边出来
+   @keyframes lineFormRight {
+       0% {
+           right: -100%;
+           opacity: 1;
+       }
+
+       100% {
+           right: 0;
+       }
+   }
+
+   @keyframes opacity11 {
+       0% {
+           opacity: 0;
+       }
+
+       100% {
+           opacity: 1;
+       }
+   }
+
+   // 圆点闪烁
+   @keyframes starMoveLeft {
+       0% {
+           left: 2%;
+           box-shadow: 2px 2px 2px 2px rgb(123, 255, 0);
+           opacity: 0;
+       }
+
+       50% {
+           box-shadow: 2px 2px 2px 5px rgb(123, 255, 0);
+           opacity: .5;
+       }
+
+       75% {
+           box-shadow: 2px 2px 2px 0 rgb(123, 255, 0);
+           opacity: .2;
+       }
+
+       100% {
+           left: 97%;
+           box-shadow: 2px 2px 2px 5px rgb(123, 255, 0);
+           opacity: .5;
+       }
+   }
+
+   @keyframes starMoveRight {
+       0% {
+           right: 2%;
+           box-shadow: 2px 2px 2px 2px rgb(123, 255, 0);
+           opacity: 0;
+       }
+
+       50% {
+           box-shadow: 2px 2px 2px 5px rgb(123, 255, 0);
+           opacity: .5;
+       }
+
+       75% {
+           box-shadow: 2px 2px 2px 0 rgb(123, 255, 0);
+           opacity: .2;
+       }
+
+       100% {
+           right: 97%;
+           box-shadow: 2px 2px 2px 5px rgb(123, 255, 0);
+           opacity: .5;
+       }
+   }
+
+   .opacity11 {
+       -webkit-animation: opacity11 1s linear both;
+       animation: opacity11 1s linear both;
+   }
+
+   // 线的动画(左->右)
+
+   .animationLineFormLeft {
+       animation: lineFormLeft 1s linear both;
+   }
+
+   // 线的动画(右->左)
+   .animationLineFormRight {
+       // 右边线应用的动画
+       -webkit-animation: lineFormRight 1s ease both;
+       animation: lineFormRight 1s ease both;
+   }
+
+   // 星星 左->右
+   .animationStarMoveLeft {
+       animation: starMoveLeft 5s infinite linear both;
+   }
+
+   // 星星 右->左
+   .animationStarMoveRight {
+       animation: starMoveRight 5s 1s infinite linear both;
+
+   }
+
+   //-------------------------------------------场景三的动画--------------------------------------------------------------
+   @keyframes flagMove {
+       0% {
+           transform: rotateX(180deg) rotateY(0deg);
+       }
+
+       25% {
+           transform: rotateX(180deg) rotateY(-30deg);
+       }
+
+       50% {
+           transform: rotateX(180deg) rotateY(0deg);
+
+       }
+
+       75% {
+           transform: rotateX(180deg) rotateY(-30deg);
+
+       }
+
+       100% {
+           transform: rotateX(180deg) rotateY(0deg);
+       }
+   }
+
+   // 线从左边出来(左->右)
+   @keyframes three_lineFormLeft {
+       0% {
+           width: 0;
+           opacity: 1;
+       }
+
+       100% {
+           width: 30%;
+           opacity: 1;
+       }
+   }
+
+   // 线从右边出来(右->左)
+   @keyframes three_lineFormRight {
+       form {
+           opacity: 1;
+       }
+
+       to {
+           opacity: 1.0;
+           right: 0;
+       }
+   }
+
+   @keyframes three_fontLine {
+       0% {
+           opacity: 1.0;
+           width: 0;
+       }
+
+       100% {
+           opacity: 1.0;
+           width: 100%;
+       }
+   }
+
+   // 红旗移动
+   .falgMove {
+       -webkit-animation: flagMove 5s infinite linear;
+       animation: flagMove 5s infinite linear;
+   }
+
+   .three_lineFormLeft {
+       -webkit-animation: three_lineFormLeft 1s linear both;
+       animation: three_lineFormLeft 1s linear both;
+   }
+
+   .three_lineFormRight {
+       -webkit-animation: three_lineFormRight 1s linear both;
+       animation: three_lineFormRight 1s linear both;
+   }
+
+   // 文字下面的修饰线一点点出来
+   .three_fontLine {
+       -webkit-animation: three_fontLine 3s ease both;
+       animation: three_fontLine 3s ease both;
+   }
+
+   //-------------------------------------------场景四的动画--------------------------------------------------------------
+   @keyframes changeColor {
+       0% {
+           color: aqua;
+       }
+
+       25% {
+           color: rgb(100, 226, 184);
+       }
+
+       75% {
+           color: rgb(42, 216, 216);
+       }
+
+       100% {
+           color: rgb(75, 170, 114);
+       }
+   }

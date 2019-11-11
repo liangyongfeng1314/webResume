@@ -3,144 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <title></title>
-    <style type="text/css">
-      * {
-        padding: 0;
-        margin: 0;
-      }
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-      #people {
-        width: 7%;
-        height: 35%;
-        border: 1px solid;
-        position: absolute;
-        left: 9%;
-        bottom: 12%;
-        border-radius: 50%;
-        line-height: 235px;
-        text-align: center;
-      }
-      .sense_one,
-      .sense_two {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 1px solid red;
-        padding-top: 5%;
-        text-align: center;
-        transition: left 1s ease;
-      }
-      .sense_one p,
-      .sense_two p {
-        font-size: 3rem;
-      }
-      .sense_two {
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="css/sense.css">
   </head>
   <body>
     <div class="sense_one">
-      <p>场景一</p>
+      <div class="title">
+        <span class="line"></span>
+        <p class="content">
+          关于我
+        </p>
+      </div>
+        <ul class="about_me">
+          <li>
+            <p>
+              性别: 男
+            </p> 
+            <p>
+              专业: 计算机网络技术专业
+            </p>
+          </li>
+          <li>
+             <p>热爱编程</p> 
+             <p>尝试新的技术</p>
+          </li>
+          <li>追求: 努力做好自己的事情</li>
+        </ul>
     </div>
     <div class="sense_two">
-      <p>场景二</p>
+      <div class="two_title">
+        <span class="two_line"></span>
+        <p class="two_content">
+          荣获的证
+        </p>
+      </div>
+      <div class="medals"> <!--获得的证-->
+        <div class="m_o"> <!--第一-->
+          <div class="left_line">
+            <!--左边线-->
+            <span></span>
+          </div> 
+          <div class="right_content">
+            <div class="tri_left"></div> <!--左三角-->
+            <div class="tri_right"></div> <!--右三角-->
+            <p class="time">
+              2018-9-1
+            </p>
+            <p>
+              CCT-Office高级应用
+              <span class="star"></span>
+              <span class="star"></span>
+              <span class="star"></span>
+            </p>
+          </div>
+        </div>
+        <div class="m_t"> <!--第二-->
+          <div class="left_contrary_line">
+            <!--左边线(反)-->
+            <span></span>
+          </div> 
+          <div class="right_contrary_content">
+            <div class="tri_left"></div> <!--左三角-->
+            <div class="tri_right"></div> <!--右三角-->
+            <p>
+              2019-3-1
+            </p>
+            <p>
+              CCT-网页制作基础
+              <span class="star"></span>
+              <span class="star"></span>
+              <span class="star"></span>
+            </p>
+          </div>
+        </div>
+        <div class="m_thr"><!--第三-->
+          <div class="left_line">
+              <!--左边线-->
+              <span></span>
+          </div> 
+          <div class="right_content">
+            <div class="tri_left"></div> <!--左三角-->
+            <div class="tri_right"></div> <!--右三角-->
+            <p>
+              2019-9-1
+            </p>
+            <p>
+              <span class="star"></span>
+              <span class="star"></span>
+              <span class="star"></span>
+              CCT-java程序设计
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="sense_thee">
-      <p>场景三</p>
+    <div class="sense_three">
+      <div class="flags">
+        <div class="flag">
+          <div class="flag_line"></div>
+          <div class="flag_content">
+            <div class="tri"></div> <!--旗子-->
+          </div>
+        </div>
+        <div class="flag">
+          <div class="flag_line"></div>
+          <div class="flag_content">
+            <div class="tri"></div> <!--旗子-->
+          </div>
+        </div>
+        <div class="flag">
+          <div class="flag_line"></div>
+          <div class="flag_content">
+            <div class="tri"></div> <!--旗子-->
+          </div>
+        </div>
+      </div>
+      <div class="languages_area">
+        <div class="left_line">
+          <span></span>
+        </div>
+        <div class="languages">
+          <ul>
+              <li>
+                <p>我会的语言</p>  
+                <span></span>
+                <!--修饰的线-->
+              </li>
+            <li>
+              <p>1、Html/Html5</p>
+              <span></span> <!--修饰的线-->
+            </li>
+            <li>
+              <p>2、Css/Css3</p>
+              <span></span> <!--修饰的线-->
+            </li>
+            <li>
+              <p>3、Jquery</p>
+              <span></span> <!--修饰的线-->
+            </li>
+            <li>
+              <p>4、Javascript</p>
+              <span></span> <!--修饰的线-->
+            </li>
+            <li>
+              <p>5、Php</p>
+              <span></span> <!--修饰的线-->
+            </li>
+            <li>
+              <p>6、Thinkphp</p>
+              <span></span> <!--修饰的线-->
+            </li>
+          </ul>
+        </div>
+        <div class="right_line">
+          <span></span>
+        </div>
+      </div>
     </div>
     <div class="sense_four">
-      <p>场景四</p>
+      <div class="four_content">
+        <p>感谢您抽空观看:</p>
+        <p>如您满意,请联系我!</p>
+        <p>13928110252(手机/微信)同号</p>
+        <a href="./stample_reels.html"> 更多作品</a>
+      </div>
     </div>
-    <div id="people">人</div>
+    <div id="people">
+      <p>左右移动</p>
+    </div>
   </body>
-  <script type="text/javascript">
-    //keyCode 值 左上右下 37--40
-    window.onload = function() {
-      let people = document.querySelector("#people");
-      let sense_one = document.querySelector(".sense_one"); // 场景一
-      let sense_two = document.querySelector(".sense_two"); // 场景二
-      let sense_three = document.querySelector(".sense_two"); // 场景三
-      let sense_four = document.querySelector(".sense_four"); // 场景四
-      let is_sense_two = false; // 是否解锁场景二
-      let isMove = {
-        left: "false",
-        top: "false",
-        right: "false",
-        bottom: "false"
-      };
-      // alert(people.offsetWidth);
-      document.onkeydown = function(ev) {
-        var ev = ev || event;
-        if (ev.keyCode == 37) {
-          isMove["left"] = true;
-        }
-        if (ev.keyCode == 38) {
-          isMove["top"] = true;
-        }
-        if (ev.keyCode == 39) {
-          isMove["right"] = true;
-        }
-        if (ev.keyCode == 40) {
-          isMove["bottom"] = true;
-        }
-      };
-      document.onkeyup = function() {
-        var ev = ev || event;
-        if (ev.keyCode == 37) {
-          isMove["left"] = false;
-        }
-        if (ev.keyCode == 38) {
-          isMove["top"] = false;
-        }
-        if (ev.keyCode == 39) {
-          isMove["right"] = false;
-        }
-        if (ev.keyCode == 40) {
-          isMove["bottom"] = false;
-        }
-      };
-      setInterval(function() {
-        if (isMove["left"] == true) {
-          let left = people.getBoundingClientRect().left; // 元素距离左边的距离
-          if (left <= 0) {
-            people.style.left = people.offsetWidth + "px";
-          } else {
-            people.style.left = people.offsetLeft - 10 + "px";
-          }
-        }
-        // if (isMove["top"] == true) {
-        //     let top = people.getBoundingClientRect().top;
-        //   people.style.top = people.offsetTop - 10 + "px";
-        // }
-        if (isMove["right"] == true) {
-          let right = people.getBoundingClientRect().right; // 元素距离右边的距离
-
-          // let activityDistance = window.innerWidth - people.offsetWidth; // 可移动距离
-          // 判断是否达到最右端
-          if (right >= window.innerWidth) {
-            people.style.left = people.offsetWidth + "px";
-            is_sense_two = true; // 开启场景二
-            if (is_sense_two == true) {
-              sense_one.style.left = "-5000px";
-              sense_one.style.zIndex = 1;
-              sense_two.style.display = "block";
-            }
-          } else {
-            people.style.left = people.offsetLeft + 10 + "px";
-          }
-        }
-        // if (isMove["bottom"] == true) {
-        //   people.style.top = people.offsetTop + 10 + "px";
-        // }
-      }, 30);
-    };
-  </script>
+  <script type="text/javascript" src="js/sense.js"></script>
 </html>
